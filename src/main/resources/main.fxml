@@ -5,10 +5,48 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.gui.GUIController"
-            prefHeight="400.0" prefWidth="600.0">
+            prefHeight="400.0" prefWidth="800.0">
+    <Label text="Générateur de Scripts SQL"
+           layoutX="20.0"
+           layoutY="20.0">
+        <font>
+            <Font name="Arial Bold" size="24" />
+        </font>
+    </Label>
 
+    <!-- Zone de texte pour la description de la base de données -->
+    <TextArea fx:id="descriptionTextArea"
+              layoutX="20.0"
+              layoutY="70.0"
+              prefWidth="760.0"
+              prefHeight="200.0"
+              promptText="Entrez une description textuelle simplifiée de la base de données ici..." />
+
+    <!-- Bouton pour parcourir les fichiers -->
+    <Button text="Parcourir Fichier"
+            fx:id="browseFileButton"
+            layoutX="240.0"
+            layoutY="290.0"
+            prefWidth="200.0"
+            onAction="#handleBrowseFile" />
+
+    <!-- Bouton pour générer les scripts -->
+    <Button text="Générer Scripts SQL"
+            layoutX="20.0"
+            layoutY="290.0"
+            prefWidth="200.0" />
+
+    <!-- Zone d'affichage des résultats -->
+    <TextArea fx:id="sqlScriptsTextArea"
+              layoutX="20.0"
+              layoutY="340.0"
+              prefWidth="760.0"
+              prefHeight="230.0"
+              editable="false"
+              promptText="Les scripts SQL générés s'afficheront ici..." />
 </AnchorPane>
