@@ -1,12 +1,15 @@
 grammar SQLGenerator;
+@header {
+    package com.example.antlr;
+}
 
 program: tableDef+ EOF;
 
-tableDef: 'table' tableName ':' columnDef+ (foreignKeyDef)?;
+tableDef: 'table' tableName ':' (columnDef | foreignKeyDef)+;
 
 columnDef: columnName '(' type (',' constraint)* ')';
 
-foreignKeyDef: 'référence:' tableName '.' columnName;
+foreignKeyDef: 'référence:' columnName '->' tableName '.' columnName;
 
 type: 'entier' | 'texte' | 'date';
 

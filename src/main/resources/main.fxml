@@ -39,7 +39,8 @@
     <Button text="Générer Scripts SQL"
             layoutX="20.0"
             layoutY="290.0"
-            prefWidth="200.0" />
+            prefWidth="200.0"
+            onAction="#handleGenerateScripts"/>
 
     <!-- Zone d'affichage des résultats -->
     <TextArea fx:id="sqlScriptsTextArea"
